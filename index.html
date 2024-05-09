@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <h1>Tic Tac Toe</h1>
-        <div id="game-board">
+        <div class="board" id="game-board">
             <div class="cell" onclick="play(0)"></div>
             <div class="cell" onclick="play(1)"></div>
             <div class="cell" onclick="play(2)"></div>
@@ -22,6 +22,11 @@
         </div>
         <div id="message"></div>
         <button onclick="restartGame()">Restart Game</button>
+
+        <div class="winning-message">
+            <div data-winning-message-text></div>
+            <button id="restartButton">Restart</button>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
