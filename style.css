@@ -7,6 +7,14 @@ body {
     background-color: #1F5776;
     color: #E9ECEE;
 }
+#message{
+    color: #E9ECEE;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+    font-size: x-large;
+    outline-color: #C83126;
+    align-items: center;
+}
 
 
 .game-win-count {
