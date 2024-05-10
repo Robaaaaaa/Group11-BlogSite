@@ -1,4 +1,4 @@
- const xClass = 'x'
+const xClass = 'x'
 let winCircleCount = 0
 let winXCount = 0
 const circleClass = 'circle'
