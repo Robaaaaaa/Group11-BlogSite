@@ -42,11 +42,10 @@ function startGame() {
     })
     setBoardHoverClass()
     winningMessageTextElement.classList.remove('show')
-    playWelcomeSound()
 }
 
 startGame()
-restartButton.addEventListener('click',startGame)
+restartBtn.addEventListener('click',startGame)
 
 
 function handleClick(e){
@@ -71,7 +70,7 @@ function handleClick(e){
 function endGame(draw) {
     if(draw){
         winningMessageTextElement.innerText = 'Draw!'
-        playErrorSound()
+        console.log("draw")
     } else {
         winningMessageTextElement.innerText = `${circleTurn ? "O" : "X"} Wins!`
         if (circleTurn) {
@@ -139,16 +138,6 @@ resetScore.addEventListener("click",function(){
     localStorage.clear()
     restart()
 })
-
-function playErrorSound() {
-    const errorSound = document.getElementById('error-sound')
-    errorSound.play()
-}
-
-function playWelcomeSound() {
-    const welcomeSound = document.getElementById('welcome-sound')
-    welcomeSound.play()
-}
 
 xWinCount.innerText = winXCount
 circleWinCount.innerText = winCircleCount
