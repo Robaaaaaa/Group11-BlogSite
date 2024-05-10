@@ -46,6 +46,8 @@ function startGame() {
     setBoardHoverClass()
     winningMessageTextElement.classList.remove('show')
     playWelcomeSound()
+    xWinCount.innerText = winXCount
+    circleWinCount.innerText = winCircleCount
 }
 
 
@@ -153,8 +155,6 @@ function playWelcomeSound() {
     welcomeSound.play();
 }
 
-xWinCount.innerText = winXCount
-circleWinCount.innerText = winCircleCount
 
 
 
