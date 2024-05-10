@@ -24,6 +24,7 @@ function startGame() {
         cell.addEventListener('click' , handleClick,{ once: true })
     })
     setBoardHoverClass()
+   
 }
 startGame()
 
@@ -43,7 +44,7 @@ function handleClick(e){
         swapTurn()
         setBoardHoverClass()
     }
-    
+    displayTurnMessage()
 }
 
 function endGame(draw) {
@@ -92,6 +93,7 @@ function restart(){
     window.location.reload()
 }
 
-if(circleTurn){
-    console.log("circle turn")
+function displayTurnMessage() {
+    const messageDiv = document.getElementById('message');
+    messageDiv.innerText = circleTurn ?  "X's Turn" : "Circle's Turn";
 }
