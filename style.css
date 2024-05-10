@@ -1,41 +1,58 @@
 body {
     min-width: 100%;
-    min-height: 100%;
+    min-height: 100vh;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background-color:black;
-    color:white;
+    background-color: #1F5776;
+    color: #E9ECEE;
 }
 
-button{
-    
-    color:black;
-    align-content:center;
+button {
+    color: #E9ECEE;
+    align-content: center;
+    background-color: #C83126;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-items: center;
+    justify-content: center;
 }
 
-.header{
-    color:white;
-    position:static;
-    background-color:black;
+
+button:hover {
+    opacity: 0.7;
+}
+
+.header {
+    color: #8C2F20;
+    position: static;
+    background: #C49E77;
     width: 400px;
-
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow:#E9ECEE;
+    font-weight: 900;
+    font-size: x-large;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .container {
     text-align: center;
 }
 
-:root{
-    --cell-size:100px;
-    --mark-size:calc(var(--cell-size) * .9);
-    --hover-light--color:gray;
-    --hover-dark--color:rgb(218, 196, 196);
+:root {
+    --cell-size: 100px;
+    --mark-size: calc(var(--cell-size) * .9);
+    --hover-light--color: #E9ECEE;
+    --hover-dark--color: #8C2F20;
 }
 
 .board {
-    width: 100px;
-    height: 500px;
+    width: 100vw;
     display: grid;
     justify-content: center;
     align-content: center;
@@ -45,57 +62,64 @@ button{
     margin-top: 0;
 }
 
-
 #game-board {
     display: grid;
     grid-template-columns: repeat(3, 100px);
     margin: 20px auto;
     width: 300px;
+    background-color: #333;
+    border-radius: 30%;
+    box-shadow: #E9ECEE;
 }
 
 .cell {
-   width:100px;
-   height:100px;
-   border:2px solid white;
-   display: flex;
-   justify-content: center;
-   align-items:center;
-   position: relative;
-   cursor:pointer;
+    width: 100px;
+    height: 100px;
+    border: 2px solid #817F5A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
     font-size: 40px;
     cursor: pointer;
+    background-color: #C49E77;
+    transition: background-color 0.4s ease;
+}
 
+.cell:hover {
+    background-color: var(--hover-dark--color);
 }
 
 .cell:first-child,
 .cell:nth-child(2),
-.cell:nth-child(3){
+.cell:nth-child(3) {
     border-top: none;
 }
 
-.cell:nth-child(3n + 1){
+.cell:nth-child(3n + 1) {
     border-left: none;
 }
 
-.cell:nth-child(3n + 3){
+.cell:nth-child(3n + 3) {
     border-right: none;
 }
 
 .cell:nth-child(7),
 .cell:nth-child(8),
-.cell:nth-child(9){
+.cell:nth-child(9) {
     border-bottom: none;
 }
 
 .cell.x::before,
 .cell.x::after,
 .board.x .cell:not(.x):not(.circle):hover::before,
-.board.x .cell:not(.x):not(.circle):hover::after{
-    content:'';
+.board.x .cell:not(.x):not(.circle):hover::after {
+    content: '';
     position: absolute;
-    width:calc(var(--mark-size) * .15);
-    height:var(--mark-size);
-    background-color: red;
+    width: calc(var(--mark-size) * .15);
+    height: var(--mark-size);
+    background-color: #f44336;
 }
 
 .cell.x::before,
@@ -108,92 +132,82 @@ button{
     transform: rotate(-45deg);
 }
 
-.cell.circle::before{
-    background-color:black;
+.cell.circle::before {
+    background-color: #1c1c1c;
 }
 
 .cell.circle::before,
 .cell.circle::after,
 .board.circle .cell:not(.x):not(.circle):hover::before,
-.board.circle .cell:not(.x):not(.circle):hover::after{
-    content:'';
+.board.circle .cell:not(.x):not(.circle):hover::after {
+    content: '';
     position: absolute;
     border-radius: 50%;
 }
 
 .cell.circle::before,
-.board.circle .cell:not(.x):not(.circle):hover::before
- {
+.board.circle .cell:not(.x):not(.circle):hover::before {
     width: var(--mark-size);
     height: var(--mark-size);
-    background-color:white;
+    background-color: #4caf50;
 }
+
 .cell.circle::after,
-.board.circle .cell:not(.x):not(.circle):hover::after
-{
+.board.circle .cell:not(.x):not(.circle):hover::after {
     width: calc(var(--mark-size) * .7);
     height: calc(var(--mark-size) * .7);
-    background-color:black;
+    background-color: #C49E77;
 }
 
 .cell.x,
-.cell.circle{
-    cursor:not-allowed;
+.cell.circle {
+    cursor: not-allowed;
 }
 
 .board.x .cell:not(.x):not(.circle):hover::before,
 .board.x .cell:not(.x):not(.circle):hover::after,
-.board.circle .cell:not(.x):not(.circle):hover::before{
+.board.circle .cell:not(.x):not(.circle):hover::before {
     background-color: var(--hover-light--color);
 }
 
-.winning-message{
+.winning-message {
     display: none;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color:rgba(0, 0, 0, 0.867);
+    background-color: rgba(0, 0, 0, 0.9);
     justify-content: center;
-    align-items:center;
-    color:white;
+    align-items: center;
+    color: #f0f0f0;
     font-size: 5rem;
     flex-direction: column;
+    z-index: 100;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.winning-message button{
+.winning-message button {
     font-size: 3rem;
-    color:aliceblue;
-    background-color:black;
-    border: 1px solid black;
-    cursor:pointer;
-    padding: .25em .5em;
+    color: #f0f0f0;
+    background-color: #333;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
 }
 
-.winning-message button:hover{
-    background-color: rgb(66, 60, 60);
+.winning-message button:hover {
+    background-color: #555;
 }
 
-.winning-message.show{
+.winning-message.show {
     display: flex;
-}
-
-.game-win-count{
-    background-color:white;
-    display: flex;
-    width: 200px;
-    height: 100px;
-    color:black;
-    font-weight: bold;
-    display: flex;
-    flex-direction: column;
-}
-
-.x-win{
-    border:1px solid black;
-    display: flex;
-    justify-content: center;
 }
 
 .circle-win{
@@ -201,4 +215,5 @@ button{
     display: flex;
     justify-content: center;
 }
+
 
