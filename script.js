@@ -135,25 +135,25 @@ resetScore.addEventListener("click",function(){
 })
 
 function playErrorSound() {
-    const errorSound = document.getElementById('error-sound');
+    const errorSound = document.getElementById('error-sound')
     errorSound.play();
 }
 
 function playWelcomeSound() {
-    const welcomeSound = document.getElementById('welcome-sound');
-    welcomeSound.play();
+    const welcomeSound = document.getElementById('welcome-sound')
+    welcomeSound.play()
 }
 
 function displayPopupWithMessage(title, width, height) {
-    const left = (window.screen.width - width) / 2;
-    const top = (window.screen.height - height) / 2;
+    const left = (window.screen.width - width) / 2
+    const top = (window.screen.height - height) / 2
     const url = 'message.html'
-    const options = `width=${width},height=${height},top=${top},left=${left}`;
-    window.open(url, title, options);
+    const options = `width=${width},height=${height},top=${top},left=${left}`
+    window.open(url, title, options)
 }
 
 
-displayPopupWithMessage('Popup with Message', 400, 300)
+displayPopupWithMessage('Instructions', 400, 300)
 
 
 xWinCount.innerText = winXCount
