@@ -1,3 +1,27 @@
+body {
+    min-width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color:black;
+    color:white;
+}
+
+button{
+    
+    color:black;
+    align-content:center;
+}
+
+.header{
+    color:white;
+    position:static;
+    background-color:black;
+    width: 400px;
+
+}
+
 .container {
     text-align: center;
 }
@@ -10,22 +34,21 @@
 }
 
 .board {
-    width: 100vw;
-    height: 100vh;
+    width: 100px;
+    height: 500px;
     display: grid;
     justify-content: center;
     align-content: center;
     justify-items: center;
     align-items: center;
-    grid-template-columns: repeat(3, auto)
-  }
-
+    grid-template-columns: repeat(3, auto);
+    margin-top: 0;
+}
 
 
 #game-board {
     display: grid;
     grid-template-columns: repeat(3, 100px);
-    grid-gap: 5px;
     margin: 20px auto;
     width: 300px;
 }
@@ -33,16 +56,12 @@
 .cell {
    width:100px;
    height:100px;
-   border:1px solid black;
+   border:2px solid white;
    display: flex;
    justify-content: center;
    align-items:center;
    position: relative;
    cursor:pointer;
-=======
-    width: 100px;
-    height: 100px;
-    border: 1px solid black;
     font-size: 40px;
     cursor: pointer;
 
@@ -90,7 +109,7 @@
 }
 
 .cell.circle::before{
-    background-color:gray;
+    background-color:black;
 }
 
 .cell.circle::before,
@@ -107,14 +126,14 @@
  {
     width: var(--mark-size);
     height: var(--mark-size);
-    background-color:black;
+    background-color:white;
 }
 .cell.circle::after,
 .board.circle .cell:not(.x):not(.circle):hover::after
 {
     width: calc(var(--mark-size) * .7);
     height: calc(var(--mark-size) * .7);
-    background-color:white;
+    background-color:black;
 }
 
 .cell.x,
