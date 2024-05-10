@@ -71,7 +71,7 @@ function handleClick(e){
 }
 
 function endGame(draw) {
-    if(draw){
+    if (draw) {
         winningMessageTextElement.innerText = 'Draw!'
         playErrorSound()
     } else {
@@ -85,9 +85,10 @@ function endGame(draw) {
             localStorage.setItem("winXCount", JSON.stringify(winXCount))
             showWinCount(xWinCount)
         }
-        }
+    }
+    xWinCount.innerText = winXCount
+    circleWinCount.innerText = winCircleCount
     winningMessagetxt.classList.add('show')
-    
 }
 
 
