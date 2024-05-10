@@ -152,14 +152,11 @@ function displayPopupWithMessage(title, width, height) {
     window.open(url, title, options);
 }
 
-// Example usage:
+
 displayPopupWithMessage('Popup with Message', 400, 300)
 
 
 xWinCount.innerText = winXCount
 circleWinCount.innerText = winCircleCount
 
-    const messageDiv = document.getElementById('message');
-    messageDiv.innerText = circleTurn ?  "X's Turn" : "Circle's Turn";
-}
 
