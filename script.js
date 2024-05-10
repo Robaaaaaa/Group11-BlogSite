@@ -67,7 +67,7 @@ function endGame(draw) {
         winningMessageTextElement.innerText = 'Draw!'
         playErrorSound()
     } else {
-        winningMessageTextElement.innerText = `${circleTurn ? "O's" : "X's"} Wins!`
+        winningMessageTextElement.innerText = `${circleTurn ? "O" : "X"} Wins!`
         if (circleTurn) {
             winCircleCount++
             localStorage.setItem("winCircleCount", JSON.stringify(winCircleCount))
