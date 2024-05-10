@@ -1,5 +1,3 @@
-xWinCount.innerText = winXCount
-circleWinCount.innerText = winCircleCount
 const xClass = 'x'
 let winCircleCount = 0
 let winXCount = 0
