@@ -26,10 +26,28 @@
         <div id="message">
         </div>
     </div>
+    <button class="button" onclick="restart()">Reset Board</button>
+    <button id="reset-score">Reset Score Board</button>
+    <div class="winning-message" id="winning-message">
+        <div data-winning-message-text></div>
+        <button id="restart-btn" onclick="restart()">Restart</button>
+    </div>
+    <div class="game-win-count">
+        
+        <div class="x-win"  >
+            <p>X win Count:</p>
+            <p class="x-count" id="x-count"></p>
+        </div>
+        
+        <div class="circle-win" >
+            <p>Circle Win Count:</p>
+            <p class="circle-count" id="circle-count"></p>
+        </div>
     <button class="button" onclick="restart()">Restart</button>
     <div class="winning-message" id="winning-message">
         <div data-winning-message-text></div>
         <button id="restart-btn" onclick="restart()">Restart</button>
+
     </div>
     <script src="script.js"></script>
     </div>

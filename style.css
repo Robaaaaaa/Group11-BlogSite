@@ -179,3 +179,25 @@ button{
     display: flex;
 }
 
+.game-win-count{
+    background-color:white;
+    display: flex;
+    width: 200px;
+    height: 100px;
+    color:black;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+}
+
+.x-win{
+    border:1px solid black;
+    display: flex;
+    justify-content: center;
+}
+
+.circle-win{
+    border:1px solid black;
+    display: flex;
+    justify-content: center;
+}
