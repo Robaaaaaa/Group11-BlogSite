@@ -32,7 +32,7 @@ winCircleCount = circleScoreFromLocalStorage
 winXCount = xScoreFromLocalStorage
 
 startGame()
-restartButton.addEventListener('click',startGame)
+restartBtn.addEventListener('click',startGame)
 
 function startGame() {
     
