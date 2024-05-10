@@ -1,4 +1,4 @@
-const xClass = 'x'
+ const xClass = 'x'
 let winCircleCount = 0
 let winXCount = 0
 const circleClass = 'circle'
@@ -28,11 +28,10 @@ let circleTurn=''
 const board = document.getElementById('game-board')
 
 winCircleCount = circleScoreFromLocalStorage
-
 winXCount = xScoreFromLocalStorage
 
 startGame()
-restartBtn.addEventListener('click',startGame)
+restartButton.addEventListener('click',startGame)
 
 function startGame() {
     
@@ -46,8 +45,6 @@ function startGame() {
     setBoardHoverClass()
     winningMessageTextElement.classList.remove('show')
     playWelcomeSound()
-    xWinCount.innerText = winXCount
-    circleWinCount.innerText = winCircleCount
 }
 
 
@@ -73,7 +70,7 @@ function handleClick(e){
 }
 
 function endGame(draw) {
-    if (draw) {
+    if(draw){
         winningMessageTextElement.innerText = 'Draw!'
         playErrorSound()
     } else {
@@ -87,8 +84,9 @@ function endGame(draw) {
             localStorage.setItem("winXCount", JSON.stringify(winXCount))
             showWinCount(xWinCount)
         }
-    }
+        }
     winningMessagetxt.classList.add('show')
+    
 }
 
 
@@ -153,8 +151,5 @@ function playWelcomeSound() {
     welcomeSound.play();
 }
 
-
-
-
-
-
+xWinCount.innerText = winXCount
+circleWinCount.innerText = winCircleCount
