@@ -31,17 +31,25 @@ winCircleCount = circleScoreFromLocalStorage
 
 winXCount = xScoreFromLocalStorage
 
+startGame()
+restartButton.addEventListener('click',startGame)
 
 function startGame() {
+    
     circleTurn = false
     cellElements.forEach(cell => {
+        cell.classList.remove(xClass)
+        cell.classList.remove(circleClass)
+        cell.removeEventListener('click',handleClick)
         cell.addEventListener('click' , handleClick,{ once: true })
     })
     setBoardHoverClass()
+    winningMessageTextElement.classList.remove('show')
     playWelcomeSound()
 }
 
-startGame()
+
+
 
 function handleClick(e){
     const cell = e.target
