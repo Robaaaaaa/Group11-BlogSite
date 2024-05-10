@@ -144,18 +144,6 @@ function playWelcomeSound() {
     welcomeSound.play();
 }
 
-function displayPopupWithMessage(title, width, height) {
-    const left = (window.screen.width - width) / 2;
-    const top = (window.screen.height - height) / 2;
-    const url = 'message.html'
-    const options = `width=${width},height=${height},top=${top},left=${left}`;
-    window.open(url, title, options);
-}
-
-
-displayPopupWithMessage('Popup with Message', 400, 300)
-
-
 xWinCount.innerText = winXCount
 circleWinCount.innerText = winCircleCount
 
