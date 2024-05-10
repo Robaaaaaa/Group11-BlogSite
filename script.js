@@ -136,7 +136,5 @@ resetScore.addEventListener("click",function(){
 xWinCount.innerText = winXCount
 circleWinCount.innerText = winCircleCount
 
-    const messageDiv = document.getElementById('message');
-    messageDiv.innerText = circleTurn ?  "X's Turn" : "Circle's Turn";
-}
+
 
