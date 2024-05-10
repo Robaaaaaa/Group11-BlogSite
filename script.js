@@ -1,4 +1,6 @@
 const xClass = 'x'
+let winCircleCount = 0
+let winXCount = 0
 const circleClass = 'circle'
 const winningCombinations = [
     [0, 1, 2],
@@ -13,10 +15,22 @@ const winningCombinations = [
 const winningMessageTextElement = document.querySelector('[data-winning-message-text]')
 const winningMessagetxt = document.getElementById("winning-message")
 const restartBtn = document.getElementById("restart-btn")
+const circleWinCount = document.getElementById("circle-count")
+const xWinCount = document.getElementById("x-count")
+const circleScoreFromLocalStorage = JSON.parse(localStorage.getItem("winCircleCount")) || 0
+const xScoreFromLocalStorage = JSON.parse(localStorage.getItem("winXCount")) || 0
+const resetScore = document.getElementById("reset-score")
+
+
 
 const cellElements = document.querySelectorAll('[data-cell]')
 let circleTurn=''
 const board = document.getElementById('game-board')
+
+winCircleCount = circleScoreFromLocalStorage
+
+winXCount = xScoreFromLocalStorage
+
 
 function startGame() {
     circleTurn = false
@@ -24,8 +38,9 @@ function startGame() {
         cell.addEventListener('click' , handleClick,{ once: true })
     })
     setBoardHoverClass()
-   
+    playWelcomeSound()
 }
+
 startGame()
 
 function handleClick(e){
@@ -50,10 +65,21 @@ function handleClick(e){
 function endGame(draw) {
     if(draw){
         winningMessageTextElement.innerText = 'Draw!'
+        playErrorSound()
     } else {
         winningMessageTextElement.innerText = `${circleTurn ? "O's" : "X's"} Wins!`
+        if (circleTurn) {
+            winCircleCount++
+            localStorage.setItem("winCircleCount", JSON.stringify(winCircleCount))
+            showWinCount(circleWinCount)
+        } else {
+            winXCount++
+            localStorage.setItem("winXCount", JSON.stringify(winXCount))
+            showWinCount(xWinCount)
+        }
         }
     winningMessagetxt.classList.add('show')
+    
 }
 
 

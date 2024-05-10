@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic Tac Toe</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="/images/letter.png">
 </head>
 <body>
     <div>
     <div class="container">
         <header class="header">
-            <h1>Tic Tac Toe</h1>
-        </header>
+            <h1>Tic Tac Toe🙂</h1>
+        </header🙂>
         <div class="board" id="game-board">
             <div class="cell" data-cell></div>
             <div class="cell" data-cell></div>
@@ -26,10 +27,52 @@
         <div id="message">
         </div>
     </div>
+    <div>
+        <button class="button" id="reset-score">Reset Score Board.</button>
+        <button class="button" onclick= "restart()">Clear Grid Board.</button>
+    </div>
+    
+    <div class="winning-message" id="winning-message">
+        <div data-winning-message-text></div>
+        <button id="restart-btn" onclick="restart()">Restart</button>
+
+    </div>
+    <audio id="error-sound">
+        <source src="sfx/ALERT_Error.wav" type="audio/mpeg">
+    </audio>
+
+    <audio id="welcome-sound">
+        <source src="sfx/MESSAGE-B_Accept.wav" type="audio/mpeg">
+    </audio>
+      
+    <div class="game-win-count">
+        
+        <div class="x-win"  >
+            <p>X win Count:</p>
+            <p class="x-count" id="x-count"></p>
+        </div>
+        
+        <div class="circle-win" >
+            <p>Circle Win Count:</p>
+            <p class="circle-count" id="circle-count"></p>
+
+    </div>        
+        <div class="game-win-count">
+            <div class="x-win">
+                <p>X win Count:</p>
+                <p class="x-count" id="x-count">0</p>
+            </div>
+            <div class="circle-win">
+                <p>O Win Count:</p>
+                <p class="circle-count" id="circle-count">0</p>
+            </div>
+        </div>
+
     <button class="button" onclick="restart()">Restart</button>
     <div class="winning-message" id="winning-message">
         <div data-winning-message-text></div>
         <button id="restart-btn" onclick="restart()">Restart</button>
+
     </div>
     <script src="script.js"></script>
     </div>
