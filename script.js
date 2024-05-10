@@ -120,6 +120,7 @@ function restart(){
 }
 
 function displayTurnMessage() {
+
     const messageDiv = document.getElementById('message')
     messageDiv.innerText = circleTurn ?   "Circle's Turn":"X's Turn"
 }
@@ -157,3 +158,8 @@ displayPopupWithMessage('Popup with Message', 400, 300)
 
 xWinCount.innerText = winXCount
 circleWinCount.innerText = winCircleCount
+
+    const messageDiv = document.getElementById('message');
+    messageDiv.innerText = circleTurn ?  "X's Turn" : "Circle's Turn";
+}
+
