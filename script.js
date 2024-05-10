@@ -91,3 +91,7 @@ function isDraw() {
 function restart(){
     window.location.reload()
 }
+
+if(circleTurn){
+    console.log("circle turn")
+}
