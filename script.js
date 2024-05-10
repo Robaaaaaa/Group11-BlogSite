@@ -30,11 +30,9 @@ const board = document.getElementById('game-board')
 winCircleCount = circleScoreFromLocalStorage
 winXCount = xScoreFromLocalStorage
 
-startGame()
-restartButton.addEventListener('click',startGame)
+
 
 function startGame() {
-    
     circleTurn = false
     cellElements.forEach(cell => {
         cell.classList.remove(xClass)
@@ -47,7 +45,8 @@ function startGame() {
     playWelcomeSound()
 }
 
-
+startGame()
+restartButton.addEventListener('click',startGame)
 
 
 function handleClick(e){
@@ -84,7 +83,7 @@ function endGame(draw) {
             localStorage.setItem("winXCount", JSON.stringify(winXCount))
             showWinCount(xWinCount)
         }
-        }
+    }
     winningMessagetxt.classList.add('show')
     
 }
@@ -142,13 +141,13 @@ resetScore.addEventListener("click",function(){
 })
 
 function playErrorSound() {
-    const errorSound = document.getElementById('error-sound');
-    errorSound.play();
+    const errorSound = document.getElementById('error-sound')
+    errorSound.play()
 }
 
 function playWelcomeSound() {
-    const welcomeSound = document.getElementById('welcome-sound');
-    welcomeSound.play();
+    const welcomeSound = document.getElementById('welcome-sound')
+    welcomeSound.play()
 }
 
 xWinCount.innerText = winXCount
