@@ -88,6 +88,6 @@ function isDraw() {
     } )
 }
 
-restartBtn.addEventListener("click", function(){
+function restart(){
     window.location.reload()
-})
+}
