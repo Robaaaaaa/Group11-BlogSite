@@ -143,6 +143,7 @@ function playWelcomeSound() {
     const welcomeSound = document.getElementById('welcome-sound');
     welcomeSound.play();
 }
+
 function displayPopupWithMessage(title, width, height) {
     const left = (window.screen.width - width) / 2;
     const top = (window.screen.height - height) / 2;
@@ -154,7 +155,11 @@ function displayPopupWithMessage(title, width, height) {
 
 displayPopupWithMessage('Popup with Message', 400, 300)
 
+
 xWinCount.innerText = winXCount
 circleWinCount.innerText = winCircleCount
+
+
+
 
 
