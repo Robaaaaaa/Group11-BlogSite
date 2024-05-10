@@ -1,3 +1,5 @@
+xWinCount.innerText = winXCount
+circleWinCount.innerText = winCircleCount
 const xClass = 'x'
 let winCircleCount = 0
 let winXCount = 0
@@ -88,8 +90,6 @@ function endGame(draw) {
             showWinCount(xWinCount)
         }
     }
-    xWinCount.innerText = winXCount
-    circleWinCount.innerText = winCircleCount
     winningMessagetxt.classList.add('show')
 }
 
