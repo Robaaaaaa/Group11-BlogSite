@@ -35,6 +35,27 @@
     <div class="winning-message" id="winning-message">
         <div data-winning-message-text></div>
         <button id="restart-btn" onclick="restart()">Restart</button>
+
+    </div>
+    <audio id="error-sound">
+        <source src="sfx/ALERT_Error.wav" type="audio/mpeg">
+    </audio>
+
+    <audio id="welcome-sound">
+        <source src="sfx/MESSAGE-B_Accept.wav" type="audio/mpeg">
+    </audio>
+      
+    <div class="game-win-count">
+        
+        <div class="x-win"  >
+            <p>X win Count:</p>
+            <p class="x-count" id="x-count"></p>
+        </div>
+        
+        <div class="circle-win" >
+            <p>Circle Win Count:</p>
+            <p class="circle-count" id="circle-count"></p>
+
     </div>        
         <div class="game-win-count">
             <div class="x-win">

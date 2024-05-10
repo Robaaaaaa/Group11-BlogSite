@@ -38,7 +38,7 @@ function startGame() {
         cell.addEventListener('click' , handleClick,{ once: true })
     })
     setBoardHoverClass()
-   
+    playWelcomeSound()
 }
 
 startGame()
@@ -65,6 +65,7 @@ function handleClick(e){
 function endGame(draw) {
     if(draw){
         winningMessageTextElement.innerText = 'Draw!'
+        playErrorSound()
     } else {
         winningMessageTextElement.innerText = `${circleTurn ? "O's" : "X's"} Wins!`
         if (circleTurn) {
@@ -132,6 +133,28 @@ resetScore.addEventListener("click",function(){
     localStorage.clear()
     restart()
 })
+
+function playErrorSound() {
+    const errorSound = document.getElementById('error-sound');
+    errorSound.play();
+}
+
+function playWelcomeSound() {
+    const welcomeSound = document.getElementById('welcome-sound');
+    welcomeSound.play();
+}
+
+function displayPopupWithMessage(title, width, height) {
+    const left = (window.screen.width - width) / 2;
+    const top = (window.screen.height - height) / 2;
+    const url = 'message.html'
+    const options = `width=${width},height=${height},top=${top},left=${left}`;
+    window.open(url, title, options);
+}
+
+
+displayPopupWithMessage('Popup with Message', 400, 300)
+
 
 xWinCount.innerText = winXCount
 circleWinCount.innerText = winCircleCount
