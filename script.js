@@ -95,5 +95,5 @@ function restart(){
 
 function displayTurnMessage() {
     const messageDiv = document.getElementById('message');
-    messageDiv.innerText = circleTurn ?  "X's Turn" : "Circle's Turn";
+    messageDiv.innerText = circleTurn ?   "Circle's Turn":"X's Turn";
 }
