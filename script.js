@@ -28,20 +28,25 @@ let circleTurn=''
 const board = document.getElementById('game-board')
 
 winCircleCount = circleScoreFromLocalStorage
-
 winXCount = xScoreFromLocalStorage
+
 
 
 function startGame() {
     circleTurn = false
     cellElements.forEach(cell => {
+        cell.classList.remove(xClass)
+        cell.classList.remove(circleClass)
+        cell.removeEventListener('click',handleClick)
         cell.addEventListener('click' , handleClick,{ once: true })
     })
     setBoardHoverClass()
-    playWelcomeSound()
+    winningMessageTextElement.classList.remove('show')
 }
 
 startGame()
+restartBtn.addEventListener('click',startGame)
+
 
 function handleClick(e){
     const cell = e.target
@@ -65,9 +70,9 @@ function handleClick(e){
 function endGame(draw) {
     if(draw){
         winningMessageTextElement.innerText = 'Draw!'
-        playErrorSound()
+        console.log("draw")
     } else {
-        winningMessageTextElement.innerText = `${circleTurn ? "O's" : "X's"} Wins!`
+        winningMessageTextElement.innerText = `${circleTurn ? "O" : "X"} Wins!`
         if (circleTurn) {
             winCircleCount++
             localStorage.setItem("winCircleCount", JSON.stringify(winCircleCount))
@@ -77,7 +82,7 @@ function endGame(draw) {
             localStorage.setItem("winXCount", JSON.stringify(winXCount))
             showWinCount(xWinCount)
         }
-        }
+    }
     winningMessagetxt.classList.add('show')
     
 }
@@ -134,30 +139,5 @@ resetScore.addEventListener("click",function(){
     restart()
 })
 
-function playErrorSound() {
-    const errorSound = document.getElementById('error-sound');
-    errorSound.play();
-}
-
-function playWelcomeSound() {
-    const welcomeSound = document.getElementById('welcome-sound');
-    welcomeSound.play();
-}
-
-function displayPopupWithMessage(title, width, height) {
-    const left = (window.screen.width - width) / 2;
-    const top = (window.screen.height - height) / 2;
-    const url = 'message.html'
-    const options = `width=${width},height=${height},top=${top},left=${left}`;
-    window.open(url, title, options);
-}
-
-
-displayPopupWithMessage('Popup with Message', 400, 300)
-
-
 xWinCount.innerText = winXCount
 circleWinCount.innerText = winCircleCount
-
-
-
